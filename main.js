@@ -1,24 +1,21 @@
-// attach event listener to form to get user data
+const Gameboard = (() => {
+    let gameboard = ['', '', '', '', '', '', '' , '', '']
 
-// attach event (click) listeners to each "game box" 
+    const render = () => {
+        let boardHTML = "";
+        gameboard.forEach((square, index) => {
+            boardHTML += `<div class="square-${index}>"${square}</div>`
+        })
+    }
+    document.getElementById("gameboard").innerHTML = boardHTML;
 
-//initialize the game
+    return {
+        render,
+    }
+})();
 
-// check which game mode is being played
+const startButton = document.getElementById("start-button");
 
-// set win conditions
-
-// determine current player
-
-// after each move, check win conditions and if not met set other player as active
-
-// human vs human, next implement easy ai, next impossible ai
-
-const form = document.querSelector("#myForm");
-
-form.addEventListener('submit', (event) => {
-    event.preventDefault();
-    const formData = new FormData();
-    const data - Object.fromEntries(formData);
-    
+startButton.addEventListener("click", () => {
+    //Game.start()
 })
